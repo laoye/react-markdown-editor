@@ -1,5 +1,5 @@
 {
-  "name": "@uiw/react-markdown-editor",
+  "name": "react-markdown-editor-no-preview",
   "version": "6.1.4",
   "description": "A markdown editor with preview, implemented with React.js and TypeScript.",
   "homepage": "https://uiwjs.github.io/react-markdown-editor",
@@ -49,8 +49,7 @@
     "@codemirror/language-data": "^6.1.0",
     "@uiw/codemirror-extensions-events": "^4.12.3",
     "@uiw/codemirror-themes": "^4.12.3",
-    "@uiw/react-codemirror": "^4.12.3",
-    "@uiw/react-markdown-preview": "^5.0.0"
+    "@uiw/react-codemirror": "^4.12.3"
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",

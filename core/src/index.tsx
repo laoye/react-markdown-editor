@@ -4,7 +4,7 @@ import { languages } from '@codemirror/language-data';
 import { EditorView, type ViewUpdate } from '@codemirror/view';
 import * as events from '@uiw/codemirror-extensions-events';
 import CodeMirror, { type ReactCodeMirrorProps, type ReactCodeMirrorRef } from '@uiw/react-codemirror';
-import MarkdownPreview, { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
+// import MarkdownPreview, { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
 import ToolBar, { type Commands } from './components/ToolBar/index';
 import { getCommands, getModeCommands } from './commands/index';
 import { defaultTheme } from './theme';
@@ -12,7 +12,7 @@ import './index.less';
 
 export * from './theme';
 export * from './commands/index';
-export * from '@uiw/react-markdown-preview';
+// export * from '@uiw/react-markdown-preview';
 
 export const scrollerStyle = EditorView.theme({
   '&.cm-editor, & .cm-scroller': {
@@ -30,7 +30,7 @@ export interface IMarkdownEditor extends ReactCodeMirrorProps {
   visible?: boolean;
   visibleEditor?: boolean;
   /** Override the default preview component */
-  renderPreview?: (props: MarkdownPreviewProps, initVisible: boolean) => React.ReactNode;
+  renderPreview?: (props: any, initVisible: boolean) => React.ReactNode;
   /** Preview expanded width @default `50%` */
   previewWidth?: string;
   /** Whether to enable preview function @default `true` */
@@ -50,7 +50,7 @@ export interface IMarkdownEditor extends ReactCodeMirrorProps {
   /** Option to hide the tool bar. */
   showToolbar?: boolean;
   /** [@uiw/react-markdown-preview](https://github.com/uiwjs/react-markdown-preview#options-props) options */
-  previewProps?: MarkdownPreviewProps;
+  previewProps?: any;
   /** replace the default `extensions` */
   reExtensions?: ReactCodeMirrorProps['extensions'];
   /** Edit mode and preview mode switching event */
@@ -76,10 +76,10 @@ const MarkdownEditor: MarkdownEditorComponent = React.forwardRef<MarkdownEditorR
 ) as unknown as MarkdownEditorComponent;
 
 type MarkdownEditorComponent = React.FC<React.PropsWithRef<IMarkdownEditor>> & {
-  Markdown: typeof MarkdownPreview;
+  // Markdown: typeof MarkdownPreview;
 };
 
-MarkdownEditor.Markdown = MarkdownPreview;
+// MarkdownEditor.Markdown = MarkdownPreview;
 
 export default MarkdownEditor;
 
@@ -209,7 +209,8 @@ function MarkdownEditorInternal(
           {renderPreview ? (
             renderPreview(previewProps, !!visible)
           ) : (
-            <MarkdownPreview {...previewProps} data-visible={!!visible} />
+            // <MarkdownPreview {...previewProps} data-visible={!!visible} />
+            <div>Markdown preview component goes here.</div>
           )}
         </div>
       )}
